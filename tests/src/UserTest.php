@@ -31,7 +31,28 @@ class UserTest extends \PHPUnit_Framework_TestCase
         $this->assertEquals("foo", $sut->getApiKey("foo"));
 
         $this->assertInternalType("string", $sut->getFullName());
+    }
 
 
+    /**
+     * @dataProvider provideNameCombinations
+     */
+    public function testToStringMethod( $expected, $display_name, $login_name)
+    {
+        $sut = new User;
+        $sut->setDisplayName( $display_name );
+        $sut->setLoginName( $login_name );
+
+        $this->assertEquals($expected, $sut->__toString());
+    }
+
+
+    public function provideNameCombinations()
+    {
+        return array(
+            [ "foo", "foo", "bar"],
+            [ "foo", "foo",  null],
+            [ "bar", null,  "bar"]
+        );
     }
 }
