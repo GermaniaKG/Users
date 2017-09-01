@@ -1,6 +1,7 @@
-#Germania\Users
+#Germania KG · Users
 
-This package is distilled from legacy code. You certainly will not want to use this your production code.
+**This package is distilled from legacy code.**  
+You certainly will not want to use this your production code.
 
 ##Installation
 
@@ -11,27 +12,23 @@ $ composer require germania-kg/users
 ```
 
 
+## Development
 
-##Development
-
-Grab your clone and install PHPUnit and stuff:
-
-```bash:
+```bash
 $ git clone https://github.com/GermaniaKG/Users.git germania-users
 $ cd germania-users
 $ composer install
 ```
 
+## Unit tests
 
-##Testing
+Either copy `phpunit.xml.dist` to `phpunit.xml` and adapt to your needs, or leave as is. 
+Run [PhpUnit](https://phpunit.de/) like this:
 
-- Copy `phpunit.xml.dist` to `phpunit.xml` and adapt to your needs.
+```bash
+$ vendor/bin/phpunit
+```
 
-- In project root, run `phpunit`
-
-- Have a look into *tests/src* directory.
-
-
-##TODO
+## TODO
 
 • *user_id* column name in SQL still is *client_id*. This is legacy and subject to change in upcoming major versions.
