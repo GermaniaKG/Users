@@ -1,9 +1,9 @@
-#Germania KG · Users
+# Germania KG · Users
 
 **This package is distilled from legacy code.**  
 You certainly will not want to use this your production code.
 
-##Installation
+## Installation
 
 Setup MySQL database with table creation listing in  `sql/users.sql.txt`. Use Composer for PHP:
 
@@ -22,7 +22,7 @@ $ composer install
 
 ## Unit tests
 
-Either copy `phpunit.xml.dist` to `phpunit.xml` and adapt to your needs, or leave as is. 
+Either copy `phpunit.xml.dist` to `phpunit.xml` and adapt to your needs, or leave as is.
 Run [PhpUnit](https://phpunit.de/) like this:
 
 ```bash
