@@ -1,7 +1,7 @@
 <?php
 namespace Germania\Users;
 
-use Interop\Container\ContainerInterface;
+use Psr\Container\ContainerInterface;
 
 interface UsersInterface extends \IteratorAggregate, \Countable, ContainerInterface
 {
