@@ -5,42 +5,14 @@ namespace Germania\Users;
 abstract class UserAbstract  implements UserInterface
 {
 
-    public $id;
+    use UserIdAwareTrait;
+
     public $display_name;
     public $first_name;
     public $last_name;
     public $login_name;
     public $email;
     public $api_key;
-
-
-
-/**
- * Sets the database ID (primary key) of the user.
- *
- * @param  int|string $id
- * @return self
- * @uses   $id
- */
-    public function setId($id)
-    {
-        $this->id = $id;
-        return $this;
-    }
-
-
-/**
- * Returns the database ID (primary key) of the user.
- *
- * @uses $id
- */
-    public function getId()
-    {
-        return $this->id;
-    }
-
-
-
 
 
 /**
