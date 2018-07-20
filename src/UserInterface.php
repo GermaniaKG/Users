@@ -3,12 +3,8 @@ namespace Germania\Users;
 
 
 
-interface UserInterface
+interface UserInterface extends UserIdAwareInterface
 {
-
-
-    public function setId($id);
-    public function getId();
 
     public function getFullName();
 
