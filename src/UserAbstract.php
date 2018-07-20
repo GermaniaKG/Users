@@ -15,17 +15,17 @@ abstract class UserAbstract  implements UserInterface
     public $api_key;
 
 
-/**
- * Returns the user's full name
- */
+    /**
+     * Returns the user's full name
+     */
     abstract public function getFullName();
 
 
 
 
-/**
- * @uses $display_name
- */
+    /**
+     * @uses $display_name
+     */
     public function setDisplayName($display_name)
     {
         $this->display_name = $display_name;
@@ -34,10 +34,10 @@ abstract class UserAbstract  implements UserInterface
 
 
 
-/**
- * @return string
- * @uses   $display_name
- */
+    /**
+     * @return string
+     * @uses   $display_name
+     */
     public function getDisplayName()
     {
         return $this->display_name;
@@ -51,11 +51,11 @@ abstract class UserAbstract  implements UserInterface
 
 
 
-/**
- * @param  string $name
- * @return self
- * @uses   $first_name
- */
+    /**
+     * @param  string $name
+     * @return self
+     * @uses   $first_name
+     */
     public function setFirstName($name)
     {
         $this->first_name = $name;
@@ -63,9 +63,9 @@ abstract class UserAbstract  implements UserInterface
     }
 
 
-/**
- * @uses $first_name
- */
+    /**
+     * @uses $first_name
+     */
     public function getFirstName()
     {
         return $this->first_name;
@@ -74,11 +74,11 @@ abstract class UserAbstract  implements UserInterface
 
 
 
-/**
- * @param  string $name
- * @return self
- * @uses   $last_name
- */
+    /**
+     * @param  string $name
+     * @return self
+     * @uses   $last_name
+     */
     public function setLastName($name)
     {
         $this->last_name = $name;
@@ -86,9 +86,9 @@ abstract class UserAbstract  implements UserInterface
     }
 
 
-/**
- * @uses $last_name
- */
+    /**
+     * @uses $last_name
+     */
     public function getLastName()
     {
         return $this->last_name;
@@ -97,11 +97,11 @@ abstract class UserAbstract  implements UserInterface
 
 
 
-/**
- * @param  string $name
- * @return self
- * @uses   $login_name
- */
+    /**
+     * @param  string $name
+     * @return self
+     * @uses   $login_name
+     */
     public function setLoginName($name)
     {
         $this->login_name = $name;
@@ -109,9 +109,9 @@ abstract class UserAbstract  implements UserInterface
     }
 
 
-/**
- * @uses $login_name
- */
+    /**
+     * @uses $login_name
+     */
     public function getLoginName()
     {
         return $this->login_name;
@@ -121,10 +121,10 @@ abstract class UserAbstract  implements UserInterface
 
 
 
-/**
- * @param  mixed $email
- * @return self
- */
+    /**
+     * @param  mixed $email
+     * @return self
+     */
     public function setEmail( $email)
     {
         $this->email = $email;
@@ -132,9 +132,9 @@ abstract class UserAbstract  implements UserInterface
     }
 
 
-/**
- * @uses $email
- */
+    /**
+     * @uses $email
+     */
     public function getEmail()
     {
         return $this->email;
@@ -142,26 +142,25 @@ abstract class UserAbstract  implements UserInterface
 
 
 
-
-
-/**
- * Returns the users API key (if defined)
- *
- * @return string|null
- * @uses   $api_key
- */
+    /**
+     * Returns the users API key (if defined)
+     *
+     * @return string|null
+     * @uses   $api_key
+     */
     public function getApiKey()
     {
         return $this->api_key;
     }
 
 
-/**
- * Sets the users API key
- *
- * @return self
- * @uses   $api_key
- */
+
+    /**
+     * Sets the users API key
+     *
+     * @return self
+     * @uses   $api_key
+     */
     public function setApiKey( $key )
     {
         $this->api_key = $key;
