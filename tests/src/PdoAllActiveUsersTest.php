@@ -5,9 +5,9 @@ use Germania\Users\PdoAllActiveUsers;
 use Germania\Users\UserAbstract;
 use Germania\Users\UsersInterface;
 use Prophecy\Argument;
-use Interop\Container\ContainerInterface;
+use Psr\Container\ContainerInterface;
 
-class PdoAllActiveUsersTest extends \PHPUnit_Framework_TestCase
+class PdoAllActiveUsersTest extends \PHPUnit\Framework\TestCase
 {
 
 

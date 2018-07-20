@@ -8,7 +8,7 @@ use Germania\Users\UsersInterface;
 use Prophecy\Argument;
 use Interop\Container\ContainerInterface;
 
-class UserTest extends \PHPUnit_Framework_TestCase
+class UserTest extends \PHPUnit\Framework\TestCase
 {
     public function testSimpleInstantiation( )
     {
