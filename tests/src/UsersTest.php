@@ -4,10 +4,10 @@ namespace tests;
 use Germania\Users\Users;
 use Germania\Users\UsersInterface;
 use Germania\Users\UserNotFoundException;
-use Interop\Container\ContainerInterface;
+use Psr\Container\ContainerInterface;
 use Prophecy\Argument;
 
-class UsersTest extends \PHPUnit_Framework_TestCase
+class UsersTest extends \PHPUnit\Framework\TestCase
 {
 
 

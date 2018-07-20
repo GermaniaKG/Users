@@ -10,7 +10,7 @@ use Prophecy\Argument;
 use Interop\Container\ContainerInterface;
 
 
-class PdoUserFactoryTest extends \PHPUnit_Framework_TestCase
+class PdoUserFactoryTest extends \PHPUnit\Framework\TestCase
 {
 
 
@@ -32,6 +32,7 @@ class PdoUserFactoryTest extends \PHPUnit_Framework_TestCase
         $user = $this->prophesize( UserAbstract::class );
 
         $sut = new PdoUserFactory( $pdo->reveal(), $user->reveal() );
+        $this->assertInstanceOf( \PDOStatement::class, $sut->stmt);
     }
 
 

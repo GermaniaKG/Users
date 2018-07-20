@@ -1,7 +1,7 @@
 <?php
 namespace Germania\Users;
 
-use Interop\Container\ContainerInterface;
+use Psr\Container\ContainerInterface;
 
 class PdoUserFactory implements ContainerInterface
 {

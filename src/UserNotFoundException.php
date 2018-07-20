@@ -1,9 +1,9 @@
 <?php
 namespace Germania\Users;
 
-use Interop\Container\Exception\NotFoundException;
+use Psr\Container\NotFoundExceptionInterface;
 
-class UserNotFoundException extends \Exception implements NotFoundException
+class UserNotFoundException extends \Exception implements NotFoundExceptionInterface
 {
 
 }
