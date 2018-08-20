@@ -31,8 +31,8 @@ class PdoAllActiveUsers extends Users implements UsersInterface
         id                 AS id,
         user_first_name    AS first_name,
         user_last_name     AS last_name,
-        user_login_name    AS description,
-        user_display_name  AS login_name,
+        user_login_name    AS login_name,
+        user_display_name  AS display_name,
         user_email         AS email,
         api_key            AS api_key
 
