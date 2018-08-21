@@ -1,41 +1,31 @@
 <?php
 namespace tests;
 
-use Germania\Users\PdoAllActiveUsers;
+use Germania\Users\PdoAllUsers;
 use Germania\Users\UserAbstract;
 use Germania\Users\UsersInterface;
-use Germania\Users\User;
 use Prophecy\Argument;
 use Psr\Container\ContainerInterface;
 
-class PdoAllActiveUsersTest extends \PHPUnit\Framework\TestCase
+class PdoAllUsersTest extends \PHPUnit\Framework\TestCase
 {
+
 
     public function testSimpleUsage( )
     {
 
         $execution_result = true;
-
-        $user1 = new User;
-        $user1->is_active = false;
-
-        $user2 = new User;
-        $user2->is_active = true;
-
-        $users_result = array( $user1, $user2);
-
+        $users_result     = array();
 
         $pdo_mock = $this->createMockPdo( $execution_result, $users_result);
         $user = $this->prophesize( UserAbstract::class );
 
-        $sut = new PdoAllActiveUsers( $pdo_mock, $user->reveal() );
+        $sut = new PdoAllUsers( $pdo_mock, $user->reveal() );
 
         $this->assertInstanceOf( \IteratorAggregate::class, $sut );
         $this->assertInstanceOf( \Countable::class, $sut );
         $this->assertInstanceOf( ContainerInterface::class, $sut );
         $this->assertInstanceOf( UsersInterface::class, $sut );
-
-        $this->assertEquals(1, iterator_count( $sut ));
     }
 
 
@@ -48,7 +38,7 @@ class PdoAllActiveUsersTest extends \PHPUnit\Framework\TestCase
         $user = $this->prophesize( UserAbstract::class );
 
         $this->expectException(\RuntimeException::class);
-        $sut = new PdoAllActiveUsers( $pdo_mock, $user->reveal() );
+        $sut = new PdoAllUsers( $pdo_mock, $user->reveal() );
 
     }
 
@@ -65,7 +55,5 @@ class PdoAllActiveUsersTest extends \PHPUnit\Framework\TestCase
         $pdo->prepare( Argument::type('string') )->willReturn( $stmt_mock );
         return $pdo->reveal();
     }
-
-
 
 }

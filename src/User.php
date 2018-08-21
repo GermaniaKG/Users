@@ -6,8 +6,6 @@ namespace Germania\Users;
 class User extends UserAbstract implements UserInterface
 {
 
-
-
     /**
      * @return string The user display or login name
      */
@@ -27,6 +25,7 @@ class User extends UserAbstract implements UserInterface
     public function getFullName() {
         return trim($this->getFirstName() . ' ' . $this->getLastName());
     }
+
 
 
 }
