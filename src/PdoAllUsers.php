@@ -37,8 +37,7 @@ class PdoAllUsers extends Users implements UsersInterface
         api_key            AS api_key,
         is_active          AS is_active,
         created            AS created,
-        updated            AS updated,
-
+        updated            AS updated
 
         FROM {$this->table}";
 
