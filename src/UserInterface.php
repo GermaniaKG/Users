@@ -8,6 +8,22 @@ interface UserInterface extends UserIdAwareInterface
 
     public function getFullName();
 
+    /**
+     * @return boolean
+     */
+    public function isActive();
+
+    /**
+     * @return DateTime
+     */
+    public function getCreationDateTime();
+
+    /**
+     * @return DateTime
+     */
+    public function getLastUpdateDateTime();
+
+
     public function setDisplayName( $name );
     public function getDisplayName();
 

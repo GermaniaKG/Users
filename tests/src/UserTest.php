@@ -47,6 +47,80 @@ class UserTest extends \PHPUnit\Framework\TestCase
     }
 
 
+    /**
+     * @dataProvider provideFalsyValues
+     */
+    public function testIsActiveFalse( $falsy_value )
+    {
+        $sut = new User;
+        $sut->is_active = $falsy_value;
+        $this->assertFalse( $sut->isActive());
+    }
+
+
+    public function testCreationTimestampGetters( )
+    {
+        $sut = new User;
+        $this->assertEmpty( $sut->getCreationDateTime());
+
+        $now = new \DateTime;
+        $now_format = $now->format("Y-m-d H:i:s");
+
+        $sut->created = $now_format;
+        $ku = $sut->getCreationDateTime();
+        $this->assertEquals( $now_format, $ku->format("Y-m-d H:i:s"));
+    }
+
+
+
+    public function testUpdateTimestampGetters( )
+    {
+        $sut = new User;
+        $this->assertEmpty( $sut->getLastUpdateDateTime());
+
+        $now = new \DateTime;
+        $now_format = $now->format("Y-m-d H:i:s");
+
+        $sut->updated = $now_format;
+        $ku = $sut->getLastUpdateDateTime();
+        $this->assertEquals( $now_format, $ku->format("Y-m-d H:i:s"));
+    }
+
+
+
+    /**
+     * @dataProvider provideTrueyValues
+     */
+    public function testIsActiveTrue( $truey_value )
+    {
+        $sut = new User;
+        $sut->is_active = $truey_value;
+        $this->assertTrue( $sut->isActive());
+    }
+
+
+    public function provideFalsyValues()
+    {
+        return array(
+            [ 0 ],
+            [ null ],
+            [ "" ],
+            [ false ],
+            [ array() ]
+        );
+    }
+
+    public function provideTrueyValues()
+    {
+        return array(
+            [ 1 ],
+            [ "notempty" ],
+            [ true ],
+            [ array("foo") ]
+        );
+    }
+
+
     public function provideNameCombinations()
     {
         return array(

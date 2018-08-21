@@ -7,12 +7,17 @@ abstract class UserAbstract  implements UserInterface
 
     use UserIdAwareTrait;
 
+
     public $display_name;
     public $first_name;
     public $last_name;
     public $login_name;
     public $email;
     public $api_key;
+
+    public $is_active;
+    public $created;
+    public $updated;
 
 
     /**
@@ -21,6 +26,38 @@ abstract class UserAbstract  implements UserInterface
     abstract public function getFullName();
 
 
+
+    /**
+     * @return bool
+     * @uses   $is_active
+     */
+    public function isActive()
+    {
+        return (bool) $this->is_active;
+    }
+
+
+    /**
+     * @return DateTime
+     */
+    public function getCreationDateTime()
+    {
+        if ($this->created)
+            return \DateTime::createFromFormat( "Y-m-d H:i:s", $this->created );
+        return $this->created;
+    }
+
+
+    /**
+     * @return DateTime
+     */
+    public function getLastUpdateDateTime()
+    {
+        if ($this->updated)
+            return \DateTime::createFromFormat( "Y-m-d H:i:s", $this->updated );
+        return $this->updated;
+
+    }
 
 
     /**
