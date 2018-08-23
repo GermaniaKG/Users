@@ -10,6 +10,12 @@ class Users implements UsersInterface
     public $users = array();
 
 
+    public function __debugInfo() {
+        return [
+            'NumberOfUsers' => $this->count()
+        ];
+    }
+
     /**
      * @return UserInterface
      * @throws UserNotFoundException

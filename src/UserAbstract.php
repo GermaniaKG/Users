@@ -20,6 +20,21 @@ abstract class UserAbstract  implements UserInterface
     public $updated;
 
 
+
+    public function __debugInfo() {
+        return [
+            'ID' => $this->getId(),
+            'FirstName'   => $this->getFirstName(),
+            'LastName'    => $this->getLastName(),
+            'DisplayName' => $this->getDisplayName(),
+            'Email'       => $this->getEmail(),
+            'LoginName'   => $this->getLoginName(),
+            'isActive'    => $this->isActive(),
+            'Created'     => $this->getCreationDateTime()->format("Y-m-d H:i:s")
+        ];
+    }
+
+
     /**
      * Returns the user's full name
      */
