@@ -11,6 +11,11 @@ class PdoUserFactory implements ContainerInterface
      */
     public $table = 'users';
 
+    /**
+     * @var string
+     */
+    public $users_class;
+
 
     /**
      * @var PDOStatement
@@ -31,8 +36,11 @@ class PdoUserFactory implements ContainerInterface
      */
     public function __construct( \PDO $pdo, UserAbstract $user = null, $table = null )
     {
-        $this->pdo      = $pdo;
-        $this->table    = $table ?: $this->table;
+        $this->pdo             = $pdo;
+        $this->table           = $table ?: $this->table;
+        $this->php_users_class = $user ? get_class($user) : User::class;
+
+
 
         // ID is listed twice here in order to use it with FETCH_UNIQUE as array key
         $sql = "SELECT DISTINCT
@@ -51,9 +59,18 @@ class PdoUserFactory implements ContainerInterface
 
         $this->stmt = $pdo->prepare( $sql );
 
-        $this->stmt->setFetchMode( \PDO::FETCH_CLASS, $user ? get_class($user) : User::class );
+        $this->stmt->setFetchMode( \PDO::FETCH_CLASS, $this->php_users_class );
 
     }
+
+
+    public function __debugInfo() {
+        return [
+            'DatabaseTable' => $this->table,
+            'UsersPhpClass' => $this->php_users_class
+        ];
+    }
+
 
 
     public function has ($id) {
