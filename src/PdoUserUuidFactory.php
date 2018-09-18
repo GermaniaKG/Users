@@ -2,7 +2,7 @@
 namespace Germania\Users;
 
 use Psr\Container\ContainerInterface;
-use Ramsey\Uuid\UuidFactory;
+use Ramsey\Uuid\UuidFactoryInterface;
 
 class PdoUserUuidFactory implements ContainerInterface
 {
@@ -36,12 +36,12 @@ class PdoUserUuidFactory implements ContainerInterface
 
 
     /**
-     * @param \PDO              $pdo           PDO instance
-     * @param UuidFactory       $uuid_factory  Ramsey's UUID factory
-     * @param UserAbstract|null $user          Optional: UserInterface instance
-     * @param [type]            $table         Optional: table name
+     * @param \PDO                 $pdo           PDO instance
+     * @param UuidFactoryInterface $uuid_factory  Ramsey's UUID factory
+     * @param UserAbstract|null    $user          Optional: UserInterface instance
+     * @param [type]               $table         Optional: table name
      */
-    public function __construct( \PDO $pdo, UuidFactory $uuid_factory, UserAbstract $user = null, $table = null )
+    public function __construct( \PDO $pdo, UuidFactoryInterface $uuid_factory, UserAbstract $user = null, $table = null )
     {
         $this->pdo             = $pdo;
         $this->uuid_factory    = $uuid_factory;
