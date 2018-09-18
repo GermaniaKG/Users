@@ -45,7 +45,7 @@ class PdoUserFactory implements ContainerInterface
         // ID is listed twice here in order to use it with FETCH_UNIQUE as array key
         $sql = "SELECT DISTINCT
         U.id                 AS id,
-        HEX(U.uuid)          as uuid,
+        LOWER(HEX(U.uuid))   AS uuid,
         U.user_first_name    AS first_name,
         U.user_last_name     AS last_name,
         U.user_login_name    AS login_name,
