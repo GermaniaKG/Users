@@ -22,14 +22,23 @@
   },
 
 	"require": {
+		"php": "^5.6|^7.0",
 		"psr/log": "^1.0",
 		"psr/container": "^1.0"
 	},
 
 	"require-dev": {
-		"php-coveralls/php-coveralls": "^2.0",
-		"phpunit/phpunit": "^5.7|^6.0",
-		"phpunit/dbunit": "^3.0",
+        "php-coveralls/php-coveralls": "^2.0",
+        "phpunit/phpunit": "^5.7|^6.0|^7.0",
+        "phpunit/dbunit": "^3.0|^4.0",
 		"ramsey/uuid": "^3.7|^3.8"
-	}
+	},
+
+    "scripts": {
+          "phpunit": "phpunit",
+
+          "test": [
+              "@phpunit"
+          ]
+    }
 }
