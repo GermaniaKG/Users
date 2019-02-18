@@ -30,7 +30,6 @@
 	"require-dev": {
         "php-coveralls/php-coveralls": "^2.0",
         "phpunit/phpunit": "^5.7|^6.0|^7.0",
-        "phpunit/dbunit": "^3.0|^4.0",
 		"ramsey/uuid": "^3.7|^3.8"
 	},
 
