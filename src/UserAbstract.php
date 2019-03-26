@@ -30,7 +30,7 @@ abstract class UserAbstract  implements UserInterface
             'Email'       => $this->getEmail(),
             'LoginName'   => $this->getLoginName(),
             'isActive'    => $this->isActive(),
-            'Created'     => $this->getCreationDateTime()->format("Y-m-d H:i:s")
+            'Created'     => $this->getCreationDateTime() ? $this->getCreationDateTime()->format("Y-m-d H:i:s")
         ];
     }
 
