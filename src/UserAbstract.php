@@ -22,6 +22,7 @@ abstract class UserAbstract  implements UserInterface
 
 
     public function __debugInfo() {
+        $cdt = $this->getCreationDateTime();
         return [
             'ID' => $this->getId(),
             'FirstName'   => $this->getFirstName(),
@@ -30,7 +31,7 @@ abstract class UserAbstract  implements UserInterface
             'Email'       => $this->getEmail(),
             'LoginName'   => $this->getLoginName(),
             'isActive'    => $this->isActive(),
-            'Created'     => $this->getCreationDateTime() ? $this->getCreationDateTime()->format("Y-m-d H:i:s")
+            'Created'     => ($cdt instanceOf \DateTime) ? $cdt->format("Y-m-d H:i:s") : $cdt
         ];
     }
 
